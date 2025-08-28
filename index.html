@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Cuenta regresiva 💖</title>
+  <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -12,12 +16,14 @@
       padding: 50px;
     }
 
-    img {
-      max-width: 100%;
+    
+img {
+      max-width: 400px;
       height: auto;
       border-radius: 15px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
+
 
     h1 {
       margin-top: 30px;
@@ -27,10 +33,15 @@
   </style>
 </head>
 <body>
-
+<div>
   <!-- Cambia esta URL por la de tu foto -->
-  <img src="https://via.placeholder.com/400x300.png?text=Tu+Foto+Aquí" alt="https://yakatekdevelopment1.blob.core.windows.net/public-images/Others/yo1.jpeg"</h1>
+  <img src="https://yakatekdevelopment1.blob.core.windows.net/public-images/Others/yo1.jpeg" />
+</div>
+<div>
 
+<h1 id="countdown">Calculando días...</h1>
+</div>
+  
   <script>
     function calcularDiasRestantes(fechaObjetivo) {
       const hoy = new Date();
@@ -40,8 +51,15 @@
       return dias;
     }
 
-    const diasRestantes = calcularDiasRestantes("2025-12-06");
-    document.getElementById("countdown").textContent = `${diasRestantes} días para verte bb!`;
+    $(document).ready(function() {
+      const diasRestantes = calcularDiasRestantes("2025-12-06");
+      const mensaje = `${diasRestantes} días para verte BB!`;
+
+      setTimeout(function() {
+        $('#countdown').text(mensaje).fadeIn(2000);
+      }, 2000); // Espera 3 segundos
+    });
   </script>
+
 
 </body>
