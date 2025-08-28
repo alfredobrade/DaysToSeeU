@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cuenta regresiva 💖</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff0f5;
+      color: #333;
+      text-align: center;
+      padding: 50px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: 2em;
+      color: #e91e63;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cambia esta URL por la de tu foto -->
+  <img src="https://via.placeholder.com/400x300.png?text=Tu+Foto+Aquí" alt="Foto especialndo días..."</h1>
+
+  <script>
+    function calcularDiasRestantes(fechaObjetivo) {
+      const hoy = new Date();
+      const objetivo = new Date(fechaObjetivo);
+      const diferencia = objetivo - hoy;
+      const dias = Math.ceil(diferencia / (1000 * 60 * 60 * 24));
+      return dias;
+    }
+
+    const diasRestantes = calcularDiasRestantes("2025-12-06");
+    document.getElementById("countdown").textContent = `${diasRestantes} días para verte bb!`;
+  </script>
+
+</body>
